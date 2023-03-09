@@ -2,9 +2,9 @@ SpringCache 注解实现缓存示例
 
 # 这是一个简单的演示项目，使用步骤如下：
 
-1. 创建数据库`springboot-redis-example`
-2. 导入`init.sql`
-3. 修改`application-dev`里面`mysql`、`redis`的配置
+1. 创建`springboot-redis-example`数据库。
+2. 导入`init.sql`。
+3. 修改`application-dev.yml`里`mysql`、`redis`的配置。
 4. 启动项目，并访问 `http://127.0.0.1:8088/user/list` 观察控制台日志输出情况。
 
 # SpringCache 常见注解说明
