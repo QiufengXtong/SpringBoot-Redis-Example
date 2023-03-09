@@ -1,5 +1,11 @@
 SpringCache 注解实现缓存示例
 
+# 运行此项目需要以下环境：
+- jdk8
+- Maven
+- MySQL
+- Redis
+
 # 这是一个简单的演示项目，使用步骤如下：
 
 1. 创建`springboot-redis-example`数据库。
