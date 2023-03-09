@@ -15,14 +15,18 @@ custom:
 server:
   port: ${custom.server.port}
 spring:
+  # 数据源配置
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${custom.mysql.ip}:${custom.mysql.port}/${custom.mysql.database}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: ${custom.mysql.username}
     password: ${custom.mysql.password}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  # redis 配置
   redis:
     database: 0
     host: ${custom.redis.ip}
+    port: ${custom.redis.port}
+    password: ${custom.redis.password}
     lettuce:
       pool:
         max-active: 8
@@ -30,8 +34,9 @@ spring:
         max-wait: -1ms
         min-idle: 0
       shutdown-timeout: 100ms
-    password: ${custom.redis.password}
-    port: ${custom.redis.port}
+
+# mybatis-plus 配置
 mybatis-plus:
   configuration:
+    # 开启 mybatis 日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
