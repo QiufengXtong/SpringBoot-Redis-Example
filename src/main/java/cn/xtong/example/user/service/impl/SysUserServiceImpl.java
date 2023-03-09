@@ -18,13 +18,13 @@ import java.util.List;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
-    @Cacheable(cacheNames = "userList", key = "#sysUser")
+    @Cacheable(cacheNames = "userList", key = "#sysUser", unless = "#result == null || #result.size() == 0")
     @Override
     public List<SysUser> list(SysUser sysUser) {
         return this.baseMapper.list(sysUser);
     }
 
-    @Cacheable(key = "#id")
+    @Cacheable(key = "#id", unless = "#result == null")
     @Override
     public SysUser detail(String id) {
         return this.baseMapper.selectById(id);
